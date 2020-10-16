@@ -1,0 +1,21 @@
+{
+    "name": "Getting Started Example",
+    "version": "1.0",
+    "description": "Build an Extension!",
+    "permissions": ["tabs", "storage", "identitiy", "https://www.googleapis.com"],
+    "background": {
+        "scripts": ["./js/background.js"],
+        "persistent": false
+    },
+    "browser=action": {
+        "default_popup": "./popup.html",
+        "default_title": "Pop Up"
+    },
+    "manifest_version": 2,
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["/js.content.js"]
+        }
+    ]
+}
